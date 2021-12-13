@@ -9,6 +9,8 @@ If the file is not available it will ask you you to find it.
 EasyBPY can be downloaded from: https://github.com/curtisjamesholt/EasyBPY
 The included EasyBPY-master is current as of the date of this ReadMe
 
+[My image](Ifelsethendo/EasyBPY_Reference/blob/main/preview/EasyBPY_REF_preview.png)
+
 
 Once the app is open:
 Filter field will filter function names for the typed text
