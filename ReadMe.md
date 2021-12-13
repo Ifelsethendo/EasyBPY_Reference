@@ -9,7 +9,7 @@ If the file is not available it will ask you you to find it.
 EasyBPY can be downloaded from: https://github.com/curtisjamesholt/EasyBPY
 The included EasyBPY-master is current as of the date of this ReadMe
 
-[easypby_reference_preview](Ifelsethendo/EasyBPY_Reference/preview/EasyBPY_REF_preview.png)
+![easypby_reference_preview](https://github.com/Ifelsethendo/EasyBPY_Reference/blob/main/preview/EasyBPY_REF_preview.png)
 
 
 Once the app is open:
