@@ -4,7 +4,7 @@ Build: 12/13/2021
 A reference tool for EasyBPY
 https://curtisholt.online/easybpy
 The app will look in the application directory for a folder with "easyBPY" in the name, and then look for easybpy.py to load and parse data.
-If the file is not available it will ask you you to find it.
+If the file is not available it will ask  you to find it.
 
 EasyBPY can be downloaded from: https://github.com/curtisjamesholt/EasyBPY
 The included EasyBPY-master is current as of the date of this ReadMe
