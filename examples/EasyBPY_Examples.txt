@@ -1,0 +1,516 @@
+===Basic Selection
+from easybpy import *
+
+# Returns the active object.
+my_object = active_object()
+
+# Returns all selected objects.
+my_objects = selected_objects()
+
+# Selects all objects in the scene.
+select_all_objects()
+
+# Selects all light objects in the scene.
+lights = select_all_lights()
+
+# Inverts the current selection.
+invert_selection()
+
+# Returns a list of objects that have at least one modifier.
+mod_objects = get_objects_with_modifiers()
+
+# Selects all objects that have at least one modifier.
+select_objects_with_modifiers()
+
+===Argument Context
+from easybpy import *
+
+# Returns a reference to the ative object.
+obj = get_object()
+
+# Finds the object named 'Cube' and returns a reference to it.
+obj = get_object("Cube")
+
+# Changes the name of the 'objct' to 'New Name'
+rename_object(object, "New Name")
+
+# Changes the name of the active object to 'New Name'
+rename_object("New Name")
+
+# Deletes the object named 'Cube'.
+delete_object("Cube")
+
+# Deletes the active object.
+delete_object()
+
+# Deletes the object from the reference provided.
+delete_object(object)
+
+===Copying / Duplicating and Instancing
+# Makes a copy of 'object' and puts it in the collection named 'My Collection'
+copy_object(object, 'My Collection')
+
+# Makes a copy of 'object' and puts it in the active collection.
+copy_object(object)
+
+# Finds 'Cube' and puts it in the collection named 'My Collection'
+copy_object("Cube", "My Collection")
+
+# You can also store the reference to the new object like this:
+new_obj = copy_object(object)
+
+# Created instance of 'object' with a new name and moves it to 'My Collection'
+instance_object(object, "New Name", "My Collection")
+
+# Yes, you can also grab the returned reference like so:
+new_obj = instance_object(object, "New Object", "My Collection")
+
+===Conversions
+# Converts the provided object to a mesh.
+convert_to_mesh(object)
+convert_to_mhes("Object Name")
+
+# Converts the provided object to a grease pencil object.
+convert_to_grease_pencil(object)
+convert_to_grease_pencil("Object Name")
+
+# Converts the provided object to a curve object.
+convert_to_curve(object)
+convert_to_curve("Object Name")
+
+===Shading
+# Sets an object's shade type to smooth:
+shade_object_smooth(object)
+
+# Sets an object's shade type to flat.
+shade_object_flat(object)
+shade_flat(object)
+
+# Enabled auto smooth and sets the angle to '60' degrees.
+set_smooth_angle(object, 60)
+
+===Primitive Meshes
+create_plane()
+create_cube()
+create_circle()
+create_cylinder()
+create_uv_sphere()
+create_sphere()
+create_ico_sphere()
+create_cone()
+create_torus()
+create_grid()
+create_suzanne()
+create_monkey()
+
+===Primitive Curves
+create_bezier_curves()
+create_bezier()
+create_circle_curve()
+create_nurbs_curve()
+create_nurbs_circle()
+create_nurbs_path()
+create_path()
+create_nurbs_curve_surface()
+create_curve_surface()
+create_nurbs_circle_surface()
+create_circle_surface()
+create_nurbs_surface()
+create_nurbs_cylinder_surface()
+create_cylinder_surface()
+create_nurbs_sphere_surface()
+create_sphere_surface()
+create_nurbs_torus_surface()
+create_torus_surface()
+
+===Primitive Metaballs
+create_metaball()
+create_metaball_capsule()
+create_metaball_plane()
+create_metaball_ellipsoid()
+create_metaball_cube()
+
+===Text
+create_text_object()
+create_text()
+
+===Nodes
+# Sets the object to be in object mode.
+set_object_mode(object)
+object_mode(object)
+
+# Sets the object to be in edit mode.
+set_edit_mode(object)
+edit_mode(object)
+
+# Sets the object to be in sculpt mode.
+set_sculpt_mode(object)
+sculpt_mode(object)
+
+# Sets the object to be in vertex paint mode
+set_vertex_paint_mode(object)
+vertex_paint_mode(object)
+
+# Sets the object to be in weight paint mode.
+set_weight_paint_mode(object)
+weight_paint_mode(object)
+
+# Sets the object to be in texture paint mode.
+set_texture_paint_mode(object)
+texture_paint_mode(object)
+
+===Show and Hide
+# Hide the object.
+hide_object(object)
+hide(object)
+
+# Show the object.
+show_object(object)
+show(object)
+unhide_object(object)
+unhide(object)
+
+# Hide the object in the viewport.
+hide_in_viewport(object)
+
+# Show the object in the viewport.
+show_in_viewport(object)
+unhide_in_viewport(object)
+
+# Hide the object in the render.
+hide_in_render(object)
+
+# Show the object in the render.
+show_in_render(object)
+unhide_in_render(object)
+
+===Display Types
+# Display the object as its bounds.
+display_as_bounds(object)
+
+# DIsplay the object as textured.
+display_as_textured(object)
+
+# Display the object as a solid.
+display_as_solid(object)
+
+# Display the object as a wireframe.
+display_as_wire(object)
+
+===Translate Move
+# Moved the object 5 units along the X axis.
+move_along_axis(5.0, Vector((1,0,0)), object)
+# 'object' can accept either a single object.
+# or a list of objects.
+
+# You can also use make_vector to build a Vector type.
+axis = make_vector([1,0,0])
+move_along_axis(5.0, axis, object)
+
+# Moves 'object' 5 units along the global X axis.
+translate_along_x(5, object)
+move_along_x(5, object)
+
+# Moves 'object' 5 units along the local X axis.
+translate_along_local_x(5, object)
+move_along_local_x(5, object)
+
+===Translate Rotate
+# Rotate an object 45 degrees around an axis.
+rotate_around_axis(45, axis, object)
+# Just like the translation functions, 'object' can.
+# accept either a single object or list of objects.
+
+# Rotate object 45 degrees around the global X axis.
+rotate_around_x(45, object)
+
+# Rotate object 45 degrees around the local X axis.
+rotate_around_local_x(45, object)
+
+===Translate Scale
+# Scale an object 5 units along an axis.
+scale_along_axis(5, axis, object)
+
+# Scale an object 5 units along the global X axis
+scale_along_x(5, object)
+
+# Scale an object 5 units along the local X axis.
+scale_along_local_x(5, object)
+
+# Scale an object 5 units prependicular to the X axis.
+scale_perpendicular_to_x(5, object)
+
+===Apply Transforms
+# Applies the location (Ctrl+A -> Location)
+apply_location(object)
+
+# Applies the rotation (Ctrl+A -> Rotation)
+apply_rotation(object)
+
+# Applies the scale (Ctrl+A -> Scale)
+apply_scale(object)
+
+# Applies rotation and scale (Ctrl+A -> Rotation & Scale)
+apply_rotation_and_scale(object)
+
+# Applies all transofmrs (Ctrl+A -> All Transforms)
+apply_all_transforms(object)
+
+===Location
+# Getting the location of an object by reference.
+position = location(object)
+
+# Getting the location of the active object.
+position = location()
+
+# Setting the location of an object.
+location(object, [3.0, 0.0, 4.0])
+
+# Setting the location of an object by name.
+location("Cube", [3.0, 0.0, 4.0])
+
+===Rotation
+# Getting the rotation of an object by reference.
+rotation_euler = rotation(object)
+
+# Getting the rotation of the active object.
+rotation_euler = rotation()
+
+# Setting the rotation of an object.
+rotation(object, [45.0,0.0,40.0])
+
+# Setting the rotation of an object by name.
+rotation("Cube", [45.0, 0.0, 40.0])
+
+===Scale
+# Getting the scale of an object by reference.
+obj_scale = scale(object)
+
+# Getting the scale of the active object.
+obj_scale = scale()
+
+# Setting the scale of an object.
+scale(object, [5.0, 4.5, 2.0])
+
+# Setting the scale of an object by name.
+scale("Cube", [5.0, 4.5, 2.0])
+
+===3D Cursor
+selection_to_cursor_without_offset()
+selection_to_cursor_with_offset()
+cursor_to_world_origin()
+cursor_to_selection()
+cursor_to_active()
+selection_to_grid()
+cursor_to_grid()
+
+location = get_cursor_location()
+set_cursor_location(new_location)
+rotation = get_cursor_rotation()
+mode = get_cursor_rotation_mode()
+
+===Origins
+set_geometry_to_origin(object)
+geometry_to_origin(object)
+
+set_ortigin_to_geometry(object)
+origin_to_geometry(object)
+
+set_origin_to_cursor(object)
+origin_to_cursor(object)
+
+set_origin_to_centermass_surface(object)
+origin_to_centermass_surface(object)
+
+set_origin_to_centermass_volume(object)
+origin_to_centermass_volume(object)
+
+===Pivot Point
+set_pivot_point_to_cursor()
+set_pivot_point_to_median()
+set_pivot_point_to_individual_origins()
+set_pivot_point_to_active_element()
+set_pivot_point_to_bounding_box_center()
+
+===Collections
+# Create a new collection with the given name.
+create_collection("New Collection")
+
+# Deletes the given collection. The second argument decides
+# whether to delete objects contained within the collection.
+delete_collection(collection, True)
+
+# Deletes all objects within the given collection.
+deletes_objects_in_collection(collection)
+
+# Deletes the entire hierarchy of the given collection.
+delete_hierarchy(collection)
+
+# Duplicates the collection as well as its contents.
+duplicate_collection(collection)
+
+# Returns a reference to the collection found by name.
+# If no argument is provided, returns the active collection.
+get_collection("Collection")
+
+# Returns a list of all collections.
+collections = get_all_collections()
+
+# Links an object to a given collection.
+link_object_to_collection(object, collection)
+
+# Links a list of object to a given collection.
+link_objects_to_collection(objects, collection)
+
+# Unlinks an object from a given collection.
+unlink_object_from_collection(object, collection)
+
+# Unlinks a list of objects from a given collection.
+unlink_objects_from_collection(objects, collection)
+
+# Moves an object to a given collection.
+move_object_to_collection(object, collection)
+
+# Moves a list of objects to a given collection.
+move_objects_to_collection(objects, collection)
+
+# Returns a reference to an object's first collection.
+get_object_collection(object)
+
+# Returns a list of references to an object's collections.
+get_object_collections(object)
+
+# Returns True or False for if the collection exists.
+exists = collection_exists("Collection")
+
+===Modifiers
+# Adds a modifier of the given type to object.
+add_modifier(object, "Name", 'SUBFURF')
+
+# Gets a reference to modifier of given name.
+mod = get_modifier(object, "Name")
+
+# Removes a modifier of given name from object.
+remove_modifier (object, "Name")
+
+# Applies all modifiers on a given object.
+apply_all_modifiers(object)
+
+===Node Examples
+import bpy
+from easybpy import *
+
+a = active_object()
+
+# Get material and nodes:
+m = get_material(a)
+nodes = get_nodes(m)
+
+# Create texture node:
+texnode = create_node(nodes, "ShaderNodeTexImage")
+
+# Get the Principled BSDF node:
+bsdf = get_node(nodes, "Principled BSDF")
+
+# Create a link between the two nodes:
+create_node_link(texnode.outputs[0], bsdf.inputs[0])
+
+# Create image:
+img = create_image("Text", 256, 256)
+
+# Connect the image to the texture node:
+texnode.image = img
+
+===Images
+# Creates a new image.
+img = create_image("Name", weight = 1024, height = 1024)
+
+# Gets the image of the given name.
+img = get_image("Name")
+
+# Gets a list of all images in the file.
+images = get_all_images()
+
+# Renames the given image with the new name.
+rename_image(image, "Name")
+
+# Delted the given image.
+delete_image(texture)
+
+===Textures
+# Creates a new texture of the type 'CLOUDS'.
+tex = create_texture("Name", 'CLOUDS')
+
+# Gets the texture of the given name.
+tex = get_texture("Name")
+
+# Gets a list of all texture in the file.
+textures = get_all_textures()
+
+# Renames the given texture with the new name.
+rename_texture(texture, "Name")
+
+# Deletes the given texture.
+delete_texture(texture)
+
+===Materials
+# Creates a new material with the given name.
+create_material("Name")
+
+# Returns True or False for if the material exists.
+exists = material_exists(material)
+
+# Deletes the given material.
+delete_material(material)
+
+# Adds the given material to the object.
+add_material_to_object(object, material)
+
+# Remove given material from the object.
+remove_material_from_object(object, material)
+
+# Returns a list of all material.
+material = get_all_materials()
+
+# Returns a list of materials assigned to a given object.
+materials = get_materials_from_object(object)
+
+===Keyframes and Drivers
+# Adds a keyframe of the location property at frame 0.
+obj = active_object()
+key_loc = add_keyframe(obj, "location", 0)
+
+# Removes the location location keyframes.
+remove_keyframe(key_loc)
+
+# Adds drivers for each of the X,Y,Z location values.
+driver = add_driver(obj, "location")
+
+# Sets the X value to follow, the frame number.
+driver[0].expression = 'frame'
+
+# Removes the driver from the  X value.
+remove_driver(driver[0])
+
+===Advanced Selection
+# Returns a list of object containing "Cube" in their name.
+cubes = get_objects_including("Cube")
+
+# Selects all objects containing "Cube" in their name.
+select_objects_including("Cube")
+
+# Gets all objects with more than 3000 vertices.
+objs = get_objects_by_vertex(3000, "GREATER")
+
+# Selects all objects with less than 3000 vertices.
+select_objects_by_vertex(3000, "LESS")
+
+===Object Constraints
+# Get the active object.
+obj = active_object()
+
+# Add the copy location constraint.
+con = add_constraint('COPY_LOCTION', obj, "Name")
+
+# Remove the constraint.
+remove_constraint(con)
