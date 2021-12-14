@@ -1,5 +1,5 @@
-EasyBPY_Reference_v1 
-Build: 12/13/2021
+EasyBPY_Reference_v1.01
+Build: 12/14/2021
 
 A reference tool for EasyBPY
 https://curtisholt.online/easybpy
